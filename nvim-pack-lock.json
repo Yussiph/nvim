@@ -8,6 +8,18 @@
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp"
     },
+    "cobalt.nvim": {
+      "rev": "2c60c653b33debdd685f06da3f2056e3b25c8476",
+      "src": "https://github.com/wurli/cobalt.nvim"
+    },
+    "cobalt2.nvim": {
+      "rev": "0cc17f3491feba19ed62b2d9622577f7822a0113",
+      "src": "https://github.com/lalitmee/cobalt2.nvim"
+    },
+    "colorbuddy.nvim": {
+      "rev": "8b968581e5c19d22a861d5f3fe5dbd83394fa681",
+      "src": "https://github.com/tjdevries/colorbuddy.nvim"
+    },
     "conform.nvim": {
       "rev": "18aeab3d63d350dcf44d64c462cc489a3412af40",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -16,6 +28,10 @@
       "rev": "889e2e96edef4e144965571d46f7a77bcc4d0ddf",
       "src": "https://github.com/j-hui/fidget.nvim"
     },
+    "flutter-tools.nvim": {
+      "rev": "7d1acfd139215e02d2784733af69a61aaebe06e8",
+      "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
+    },
     "gitsigns.nvim": {
       "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -23,6 +39,10 @@
     "guess-indent.nvim": {
       "rev": "84a4987ff36798c2fc1169cbaff67960aed9776f",
       "src": "https://github.com/NMAC427/guess-indent.nvim"
+    },
+    "lytmode.nvim": {
+      "rev": "9ceaa04525edcc9dadfa7ff5cb835e7f49cfc71d",
+      "src": "https://github.com/github-main-user/lytmode.nvim"
     },
     "mason-lspconfig.nvim": {
       "rev": "7b01e2974a47d489bb92f47a41e4c0088ea8f86e",
@@ -36,9 +56,17 @@
       "rev": "8e921c2b68571e978db5d4d3fef9c9a7f8755473",
       "src": "https://github.com/mason-org/mason.nvim"
     },
+    "mini.base16": {
+      "rev": "f2b4697eb678c396052f7fd3599c142292ad94c3",
+      "src": "https://github.com/echasnovski/mini.base16"
+    },
     "mini.comment": {
       "rev": "fc87ba6554f182161d9a4bab5017c575571f000f",
       "src": "https://github.com/echasnovski/mini.comment"
+    },
+    "mini.cursorword": {
+      "rev": "52eacb10266b8ce07c052e3c80a706d29eb74006",
+      "src": "https://github.com/echasnovski/mini.cursorword"
     },
     "mini.diff": {
       "rev": "117c301374ab8546891e2b34f63885ea83527432",
@@ -47,6 +75,10 @@
     "mini.files": {
       "rev": "5e0f0d264166e71d37ca35d84c54b1887ea76b40",
       "src": "https://github.com/nvim-mini/mini.files"
+    },
+    "mini.icons": {
+      "rev": "9c7b1b90b15bdd69c52f6e31889dbc9987c30ec4",
+      "src": "https://github.com/echasnovski/mini.icons"
     },
     "mini.indentscope": {
       "rev": "ace9b4e503cb095b9a3f6442c909d117c4aa8d0e",
@@ -63,6 +95,10 @@
     "mini.pick": {
       "rev": "975e398570dd15696575c5374f94e78fd29a7a69",
       "src": "https://github.com/nvim-mini/mini.pick"
+    },
+    "mini.statusline": {
+      "rev": "e9e5c147385e5e0310ab79162dd08d0465e96d83",
+      "src": "https://github.com/echasnovski/mini.statusline"
     },
     "mini.surround": {
       "rev": "990ce30f724d08e79670107de6b915a3f1bb9a9b",
@@ -103,6 +139,14 @@
     "tokyonight.nvim": {
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
       "src": "https://github.com/folke/tokyonight.nvim"
+    },
+    "vague.nvim": {
+      "rev": "fd58046b9d64259d9785e4aeb6d6f494c6943cad",
+      "src": "https://github.com/vague-theme/vague.nvim"
+    },
+    "vim": {
+      "rev": "e7b91facff94bdf3a248df9b683119b84672256a",
+      "src": "https://github.com/dracula/vim"
     },
     "vim-sleuth": {
       "rev": "be69bff86754b1aa5adcbb527d7fcd1635a84080",
