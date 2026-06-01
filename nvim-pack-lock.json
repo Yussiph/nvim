@@ -1,8 +1,16 @@
 {
   "plugins": {
+    "Aquavium.nvim": {
+      "rev": "979afa7d6b6ff1ac94fc1a3b11fa297504aed420",
+      "src": "https://github.com/T-b-t-nchos/Aquavium.nvim"
+    },
     "LuaSnip": {
       "rev": "642b0c595e11608b4c18219e93b88d7637af27bc",
       "src": "https://github.com/L3MON4D3/LuaSnip"
+    },
+    "Oshen.nvim": {
+      "rev": "0e9bdcf1bb2ee9dd98108884c280aea92690aa38",
+      "src": "https://github.com/54L1M/Oshen.nvim"
     },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
@@ -35,6 +43,10 @@
     "gitsigns.nvim": {
       "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "gruvbox.nvim": {
+      "rev": "c14c475585494c592ef48064ad338424f15f8bad",
+      "src": "https://gitlab.com/motaz-shokry/gruvbox.nvim"
     },
     "guess-indent.nvim": {
       "rev": "84a4987ff36798c2fc1169cbaff67960aed9776f",
@@ -104,6 +116,10 @@
       "rev": "990ce30f724d08e79670107de6b915a3f1bb9a9b",
       "src": "https://github.com/nvim-mini/mini.surround"
     },
+    "neovim": {
+      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
+      "src": "https://github.com/rose-pine/neovim"
+    },
     "nvim": {
       "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
       "src": "https://github.com/catppuccin/nvim"
@@ -116,9 +132,17 @@
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
+    "onedark.nvim": {
+      "rev": "df4792accde9db0043121f32628bcf8e645d9aea",
+      "src": "https://github.com/navarasu/onedark.nvim"
+    },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "plum.nvim": {
+      "rev": "37b546b05ab84058d5ca500555fd12450addbc57",
+      "src": "https://github.com/takeshid/plum.nvim"
     },
     "telescope-fzf-native.nvim": {
       "rev": "b25b749b9db64d375d782094e2b9dce53ad53a40",
@@ -155,6 +179,10 @@
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "src": "https://github.com/folke/which-key.nvim"
+    },
+    "wisteria.nvim": {
+      "rev": "9d2ff53f31b8a17de82531ea2376e258ad500f4d",
+      "src": "https://github.com/masisz/wisteria.nvim"
     }
   }
 }

@@ -11,24 +11,23 @@ vim.opt.list = true
 -- vim.opt.listchars = { tab = '| ', trail = '·', nbsp = '␣' }
 vim.opt.wrap = false
 
+local prefix = 'https://github.com/'
 
 -- PLUGINS --
 vim.pack.add({
-	'https://github.com/catppuccin/nvim',
-	'https://github.com/nvim-treesitter/nvim-treesitter',
-	'https://github.com/tpope/vim-sleuth',
-	'https://github.com/echasnovski/mini.pairs',
-	'https://github.com/echasnovski/mini.comment',
-	'https://github.com/nvim-mini/mini.surround',
-	'https://github.com/nvim-mini/mini.pick',
-	'https://github.com/nvim-mini/mini.files',
-	'https://github.com/echasnovski/mini.indentscope',
-	'https://github.com/echasnovski/mini.diff',
-	'https://github.com/echasnovski/mini.statusline',
-	'https://github.com/echasnovski/mini.cursorword',
-	'https://github.com/echasnovski/mini.icons',
-	'https://github.com/folke/tokyonight.nvim',
-	'https://github.com/wurli/cobalt.nvim',
+	prefix .. 'nvim-treesitter/nvim-treesitter',
+	prefix .. 'tpope/vim-sleuth',
+	prefix .. 'echasnovski/mini.pairs',
+	prefix .. 'echasnovski/mini.comment',
+	prefix .. 'nvim-mini/mini.surround',
+	prefix .. 'nvim-mini/mini.pick',
+	prefix .. 'nvim-mini/mini.files',
+	prefix .. 'echasnovski/mini.indentscope',
+	prefix .. 'echasnovski/mini.diff',
+	prefix .. 'echasnovski/mini.statusline',
+	prefix .. 'echasnovski/mini.cursorword',
+	prefix .. 'echasnovski/mini.icons',
+	prefix .. 'folke/tokyonight.nvim',
 })
 
 require('mini.pairs').setup({})
@@ -87,9 +86,9 @@ vim.api.nvim_create_autocmd("BufEnter", {
 -- == Flutter Setup ==
 -- Fetch the official LSP configuration and Flutter tools ecosystem cleanly using vim.pack
 vim.pack.add({
-  { src = 'https://github.com/neovim/nvim-lspconfig' },
-  { src = 'https://github.com/nvim-lua/plenary.nvim' },
-  { src = 'https://github.com/nvim-flutter/flutter-tools.nvim' }
+  prefix .. 'neovim/nvim-lspconfig',
+  prefix .. 'nvim-lua/plenary.nvim',
+  prefix .. 'nvim-flutter/flutter-tools.nvim',
 })
 
 -- Set up Flutter tools (it automatically sets up dartls behind the scenes)
@@ -126,10 +125,10 @@ require('flutter-tools').setup({
 
 -- Update your plugin list to pull in blink
 vim.pack.add({
-  'https://github.com/neovim/nvim-lspconfig',
-  'https://github.com/nvim-lua/plenary.nvim',
-  'https://github.com/nvim-flutter/flutter-tools.nvim',
-  'https://github.com/saghen/blink.cmp', -- Add the completion engine
+  'neovim/nvim-lspconfig',
+  'nvim-lua/plenary.nvim',
+  'nvim-flutter/flutter-tools.nvim',
+  'saghen/blink.cmp', -- Add the completion engine
 })
 
 -- Configure Blink for automated neon-vivid popup listings
@@ -146,13 +145,32 @@ require('blink.cmp').setup({
 })
 
  -- Themes --
+vim.pack.add({
+	prefix .. '54L1M/Oshen.nvim',
+	"https://gitlab.com/motaz-shokry/gruvbox.nvim",
+})
+
+require("oshen").setup({
+  transparent = true,
+})
+
+
+require("gruvbox").setup({
+  variant = "auto",
+
+  styles = {
+    bold = true,
+    italic = true,
+    transparency = true,
+  },
+})
 
 require("tokyonight").setup({
 	style = 'moon',
 	transparent = true,
 	styles = {
-		sidebars = trasparent,
-		floats = trasparent,
+		sidebars = transparent,
+		floats = transparent,
 	},
 	on_colors = function(colors)
 		colors.git.add = '#44dfaa'
@@ -163,6 +181,25 @@ require("tokyonight").setup({
 
 
 
+
+
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function()
+		pcall(vim.treesitter.start)
+	end,
+})
+
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*", -- Applies to any theme, or replace with your specific theme name
+  callback = function()
+    vim.api.nvim_set_hl(0, "@string", { fg = "#888888"})
+    vim.api.nvim_set_hl(0, "String", { fg = "#888888"})
+  end,
+})
+
+vim.cmd[[colorscheme Oshen]]
+
 local colors = {
   'Normal', 'NormalFloat', 'SignColumn', 'LineNr', 
   'FoldColumn', 'StatusLine', 'StatusLineNC', 'WinSeparator'
@@ -172,20 +209,6 @@ for _, group in ipairs(colors) do
   vim.api.nvim_set_hl(0, group, { bg = 'NONE', ctermbg = 'NONE' })
 end
 
-vim.api.nvim_create_autocmd("FileType", {
-	callback = function()
-		pcall(vim.treesitter.start)
-	end,
-})
-
-require('catppuccin').setup({
-	-- flavour = "mocha",
-	transparent_background = true,
-})
-
-
--- vim.cmd.colorscheme 'cobalt2'
-vim.cmd[[colorscheme tokyonight]]
 
 vim.api.nvim_set_hl(0, "MiniCursorword", { 
   underline = true, 
