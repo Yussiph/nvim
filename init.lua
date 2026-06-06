@@ -8,6 +8,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 vim.opt.list = true
+vim.opt.clipboard = 'unnamedplus'
 -- vim.opt.listchars = { tab = '| ', trail = '·', nbsp = '␣' }
 vim.opt.wrap = false
 
@@ -89,47 +90,45 @@ vim.pack.add({
   prefix .. 'neovim/nvim-lspconfig',
   prefix .. 'nvim-lua/plenary.nvim',
   prefix .. 'nvim-flutter/flutter-tools.nvim',
+  prefix .. 'saghen/blink.cmp', -- Add the completion engine
+})
+
+require("flutter-tools").setup({
+  fvm = true,
 })
 
 -- Set up Flutter tools (it automatically sets up dartls behind the scenes)
-require('flutter-tools').setup({
-  ui = {
-    border = 'rounded', -- Clean rounded panels for floating documentation
-  },
-  decorations = {
-    statusline = {
-      device = true,    -- Shows your current active mobile device/emulator in your statusline
-      app_version = true,
-    }
-  },
-  lsp = {
-    -- The deprecated color configuration has been removed from here!
+-- require('flutter-tools').setup({
+--   ui = {
+--     border = 'rounded', -- Clean rounded panels for floating documentation
+--   },
+--   decorations = {
+--     statusline = {
+--       device = true,    -- Shows your current active mobile device/emulator in your statusline
+--       app_version = true,
+--     }
+--   },
+--   lsp = {
+--     -- The deprecated color configuration has been removed from here!
+--
+--     -- Attach our global keyboard-centric keymaps and settings when the server connects
+--     on_attach = function(client, bufnr)
+--       local opts = { buffer = bufnr, silent = true }
+--
+--       -- Enable modern native Neovim color highlights for Flutter colors/icons
+--       if vim.lsp.document_color and vim.lsp.document_color.enable then
+--         vim.lsp.document_color.enable(true, { bufnr = bufnr })
+--       end
+--
+--       -- Keymaps for navigating and auditing code structures
+--       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)      -- Go to definition
+--       vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)            -- Show documentation overview
+--       vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts) -- Code actions
+--       vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)   -- Rename symbol across project
+--     end,
+--   }
+-- })
 
-    -- Attach our global keyboard-centric keymaps and settings when the server connects
-    on_attach = function(client, bufnr)
-      local opts = { buffer = bufnr, silent = true }
-
-      -- Enable modern native Neovim color highlights for Flutter colors/icons
-      if vim.lsp.document_color and vim.lsp.document_color.enable then
-        vim.lsp.document_color.enable(true, { bufnr = bufnr })
-      end
-
-      -- Keymaps for navigating and auditing code structures
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)      -- Go to definition
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)            -- Show documentation overview
-      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts) -- Code actions
-      vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)   -- Rename symbol across project
-    end,
-  }
-})
-
--- Update your plugin list to pull in blink
-vim.pack.add({
-  'neovim/nvim-lspconfig',
-  'nvim-lua/plenary.nvim',
-  'nvim-flutter/flutter-tools.nvim',
-  'saghen/blink.cmp', -- Add the completion engine
-})
 
 -- Configure Blink for automated neon-vivid popup listings
 require('blink.cmp').setup({
@@ -179,10 +178,6 @@ require("tokyonight").setup({
 	end,
 })
 
-
-
-
-
 vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		pcall(vim.treesitter.start)
@@ -190,15 +185,16 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*", -- Applies to any theme, or replace with your specific theme name
-  callback = function()
-    vim.api.nvim_set_hl(0, "@string", { fg = "#888888"})
-    vim.api.nvim_set_hl(0, "String", { fg = "#888888"})
-  end,
-})
+-- This is only used for some themes
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   pattern = "*", -- Applies to any theme, or replace with your specific theme name
+--   callback = function()
+--     vim.api.nvim_set_hl(0, "@string", { fg = "#888888"})
+--     vim.api.nvim_set_hl(0, "String", { fg = "#888888"})
+--   end,
+-- })
 
-vim.cmd[[colorscheme Oshen]]
+vim.cmd[[colorscheme tokyonight]]
 
 local colors = {
   'Normal', 'NormalFloat', 'SignColumn', 'LineNr', 
